@@ -7,18 +7,22 @@ public class Romain {
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
+		assert(force>0);  
+		
 	}
 	
 	public String getNom() {
 		return nom;
 	}
-	public void parler(String texte) {
-		System.out.println(prendreParole()+"<<"+texte+">>");
-	}
 	
 	public String prendreParole() {
 		return "Le romain"+nom+":";
 	}
+	
+	public void parler(String texte) {
+		System.out.println(prendreParole()+"<<"+texte+">>");
+	}
+	
 	
 	public void recevoirCoup(int forceCoup) {
 		force-=forceCoup;
@@ -26,5 +30,12 @@ public class Romain {
 			parler("Aïe");
 		}
 		else parler("J'abandonne...");
+	}
+	
+	public static void main(String args[]) {
+		
+		Gaulois g1= new Gaulois(" Minus",-6);
+		
+		
 	}
 }
