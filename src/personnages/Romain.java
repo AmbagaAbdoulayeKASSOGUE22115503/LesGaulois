@@ -7,7 +7,7 @@ public class Romain {
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
-		assert(force>0);  
+		assert (force>0);  
 		
 	}
 	
@@ -15,12 +15,16 @@ public class Romain {
 		return nom;
 	}
 	
+	public int getForce() {
+		return force;
+	}
+	
 	public String prendreParole() {
 		return "Le romain"+nom+":";
 	}
 	
 	public void parler(String texte) {
-		System.out.println(prendreParole()+"<<"+texte+">>");
+		System.out.println(prendreParole()+" << "+texte+" >> ");
 	}
 	
 	
@@ -32,10 +36,20 @@ public class Romain {
 		else parler("J'abandonne...");
 	}
 	
+	
+	public String toString() {
+		return "Romain [nom=" + nom + ", force=" + force + "]";
+	}
+	
+	
 	public static void main(String args[]) {
 		
-		Gaulois g1= new Gaulois(" Minus",-6);
-		
+		Romain minus= new Romain(" Minus",-6);
+		System.out.println(minus);
+		minus.parler("Je suis minus et je suis un Romain!");
+		minus.recevoirCoup(3);
 		
 	}
+	
+	
 }
