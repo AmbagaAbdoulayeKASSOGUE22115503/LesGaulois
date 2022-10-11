@@ -29,11 +29,15 @@ public class Romain {
 	
 	
 	public void recevoirCoup(int forceCoup) {
+		assert (force>0):"Postcondition";
+		int force1=force;
 		force-=forceCoup;
 		if (force>0) {
 			parler("Aïe");
 		}
 		else parler("J'abandonne...");
+		
+		assert (force1>=force):"Préconditionn";
 	}
 	
 	
@@ -42,9 +46,9 @@ public class Romain {
 	}
 	
 	
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		
-		Romain minus= new Romain(" Minus",-6);
+		Romain minus= new Romain(" Minus",6);
 		System.out.println(minus);
 		minus.parler("Je suis minus et je suis un Romain!");
 		minus.recevoirCoup(3);
