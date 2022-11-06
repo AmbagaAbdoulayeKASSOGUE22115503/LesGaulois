@@ -59,6 +59,7 @@ public class Gaulois {
 		
 		effetPotion=forcePotion;
 		parler(" Merci Druide, je sens que ma force est "+forcePotion+" fois décuplée. ");
+
 	} 
 	
 	
@@ -69,6 +70,7 @@ public class Gaulois {
 
 	public void faireUneDonnation(Musee musee) {
 		Gaulois gaulois= new Gaulois(nom, force);
+		
 		if (nbTrophees!=0) {
 			
 			String message=" Je donne au musee tous mes trophees : \n";
