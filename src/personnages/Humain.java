@@ -1,5 +1,7 @@
 package personnages;
 
+import java.util.Set;
+
 public class Humain {
 	private String nom;
 	private String boissonPreferee;
@@ -35,6 +37,9 @@ public class Humain {
 		return argent;
 	}
 
+	public void setArgent(int argent) {
+		this.argent = argent;
+	}
 
 	public void direBonjour() {
 		parler("Bonjour ! Je m'appelle "+getNom()+" et j'aime boire du "+boissonPreferee+".");
