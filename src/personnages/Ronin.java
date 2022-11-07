@@ -18,6 +18,5 @@ public class Ronin extends Humain{
 		
 		super.parler(beneficiaire.getNom()+" prend ces "+don+" sous.");
 		beneficiaire.recevoir(don);
-		honneur++;
 	}
 }
