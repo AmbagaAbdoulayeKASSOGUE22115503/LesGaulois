@@ -1,9 +1,9 @@
 package personnages;
 
 public class Gaulois {
-	
 	private String nom;
 	private int force;
+	private int effetPotion=1;
 	
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -15,7 +15,7 @@ public class Gaulois {
 	}
 	
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "<< " + texte + " >>");
+		System.out.println(prendreParole() + "\" " + texte + " \"");
 		
 		
 	}
@@ -26,7 +26,12 @@ public class Gaulois {
 	
 	public void fraper(Romain romain) {
 		System.out.println(nom+ " envoie un grand coup dans la mâchoire de  "+ romain.getNom() );
-		romain.recevoirCoup(force / 3);
+		romain.recevoirCoup(effetPotion*(force / 3));
+	}
+	
+	public void boirePotion(int forcePotion) {
+		effetPotion=forcePotion;
+		parler("Merci Druide, je sens que ma force est "+effetPotion+" fois décuplée. ");
 	}
 	
 	@Override
@@ -38,6 +43,7 @@ public class Gaulois {
 		Gaulois asterix= new Gaulois("Asterix", 8);
 		System.out.println(asterix.getNom());
 		System.out.println(asterix);
+		asterix.boirePotion(4);
 
 	}
 	
