@@ -48,7 +48,7 @@ public class Romain {
 		System.out.println(soldatParler(" s’équipe avec un "+equipement+"."));
 	}
 	
-	public void sEquipement(Equipement equipement) {
+	public void sEquiper(Equipement equipement) {
 		switch (nbEquipement)
 		{
 			case 0:
@@ -124,6 +124,9 @@ public class Romain {
 		return equipementEjecte;
 	}
 	
+	public int getForce() {
+		return force;
+	}
 
 	public static void main(String[] args) {
 		Romain minus= new Romain("Minus",6);
@@ -131,10 +134,11 @@ public class Romain {
 //		System.out.println(Equipement.CASQUE); 
 //		System.out.println(Equipement.BOUCLIER);
 		
-		minus.sEquipement(Equipement.CASQUE);
-		minus.sEquipement(Equipement.CASQUE);
-		minus.sEquipement(Equipement.BOUCLIER);
-		minus.sEquipement(Equipement.CASQUE);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.BOUCLIER);
+		minus.sEquiper(Equipement.CASQUE);
 	}
+
 	
 }
