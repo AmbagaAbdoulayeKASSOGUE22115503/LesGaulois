@@ -6,7 +6,6 @@ public class Druide {
 	private int effetPotionMin;
 	private int effetPotionMax;
 	private int forcePotion=1;
-	private Random nbAleatoire= new Random();
 	
 	public Druide(String nom, int effetPotionMin, int effetPotionMax) {
 		this.nom = nom;
@@ -29,7 +28,8 @@ public class Druide {
 		return "Le druide " + nom + " : ";
 	}
 	
-	public void preparerPotion() {  
+	public void preparerPotion() {
+		Random nbAleatoire= new Random();
 		forcePotion= nbAleatoire.nextInt(effetPotionMin,effetPotionMax);
 		
 		if (forcePotion>=7) {

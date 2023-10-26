@@ -16,7 +16,7 @@ public class Gaulois {
 	}
 	
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "\" " + texte + " \"");
+		System.out.println(prendreParole() + "<< " + texte + " >>");
 		
 		
 	}
@@ -47,6 +47,18 @@ public class Gaulois {
 	public void boirePotion(int forcePotion) {
 		effetPotion=forcePotion;
 		parler("Merci Druide, je sens que ma force est "+effetPotion+" fois décuplée. ");
+	}
+	
+	
+	public void faireUneDonnation(Musee musee){
+		String texte="Je donne au musee tous mes trophees : ";
+		for(int i=0;i<nbTrophees;++i)
+		{
+			musee.donnerTrophees(this, trophees[i]);
+			texte+="\n-"+trophees[i];
+			
+		}
+		parler(texte);
 	}
 	
 	@Override
